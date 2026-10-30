@@ -53,35 +53,35 @@ const services = [
     price: "₦45,000",
     bookings: 428,
     progress: 100,
-    color: "bg-[#80601c]",
+    color: "bg-primary",
   },
   {
     name: "Wig Customization",
     price: "₦80,000",
     bookings: 315,
     progress: 72,
-    color: "bg-[#80601c]",
+    color: "bg-primary",
   },
   {
     name: "Hair Styling",
     price: "₦25,000",
     bookings: 284,
     progress: 62,
-    color: "bg-[#edc477]",
+    color: "bg-primary",
   },
   {
     name: "Hair Braiding",
     price: "₦30,000",
     bookings: 210,
     progress: 48,
-    color: "bg-[#edc477]",
+    color: "bg-primary",
   },
   {
     name: "Wig Revamp & Treatment",
     price: "₦35,000",
     bookings: 176,
     progress: 38,
-    color: "bg-[#edc477]",
+    color: "bg-primary",
   },
 ];
 
@@ -156,7 +156,7 @@ const appointments = [
     id: "#BK-1024",
     client: "Amaka Johnson",
     initials: "AJ",
-    avatar: "https://i.pravatar.cc/100?img=47",
+    avatar: assets.woman,
     service: "Wig Installation",
     date: "Oct 7 • 10:30 AM",
     stylist: "Sarah",
@@ -165,7 +165,7 @@ const appointments = [
     id: "#BK-1023",
     client: "David Williams",
     initials: "DW",
-    avatar: "https://i.pravatar.cc/100?img=12",
+    avatar: assets.woam,
     service: "Hair Styling",
     date: "Oct 7 • 11:00 AM",
     stylist: "Jessica",
@@ -174,7 +174,7 @@ const appointments = [
     id: "#BK-1022",
     client: "Chioma Okafor",
     initials: "CO",
-    avatar: "https://i.pravatar.cc/100?img=44",
+    avatar: assets.wig2,
     service: "Wig Customization",
     date: "Oct 6 • 02:00 PM",
     stylist: "Sarah",
@@ -183,7 +183,7 @@ const appointments = [
     id: "#BK-1021",
     client: "Grace Ade",
     initials: "GA",
-    avatar: "https://i.pravatar.cc/100?img=32",
+    avatar: assets.wig3,
     service: "Hair Braiding",
     date: "Oct 6 • 04:30 PM",
     stylist: "Linda",
@@ -257,7 +257,7 @@ const Overview: React.FC = () => {
   };
 
   return (
-    <section>
+    <section className="mx-auto max-w-[1600px]">
       <div className="flex flex-col gap-5">
         <div className="lg:flex lg:items-center lg:flex-row  lg:justify-between flex flex-col gap-4">
           <div>

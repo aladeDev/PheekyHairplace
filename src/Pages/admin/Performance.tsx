@@ -3,12 +3,12 @@ import { FiBarChart2, FiTrendingUp, FiActivity } from "react-icons/fi";
 
 const Performance: React.FC = () => {
   return (
-    <section className="mx-auto max-w-7xl space-y-6">
-      <header className="rounded-2xl border border-[#e9e5de] bg-white p-6 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a7947]">
+    <section className="mx-auto max-w-[1600px] space-y-6">
+      <header className="rounded-xl border border-[#e3ddd8] bg-white p-6 shadow-sm">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-hover">
           Pheeky Hairplace
         </p>
-        <h1 className="mt-2 font-serif text-4xl text-[#1f1a17]">Performance</h1>
+        <h1 className="mt-2 font-serif text-3xl font-semibold text-dark">Performance</h1>
       </header>
 
       <section className="grid gap-4 md:grid-cols-3">
@@ -19,23 +19,23 @@ const Performance: React.FC = () => {
         ].map(({ label, value, icon: Icon }) => (
           <div
             key={label}
-            className="rounded-2xl border border-[#e9e5de] bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+            className="rounded-xl border border-[#e3ddd8] bg-white p-5 shadow-sm"
           >
             <div className="flex items-center justify-between">
-              <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#9a938a]">
+              <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#6b6258]">
                 {label}
               </span>
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#f6f2eb] text-[#9a7947]">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FEF1E8] text-hover">
                 <Icon size={16} />
               </div>
             </div>
-            <p className="mt-5 text-2xl font-bold text-[#1f1a17]">{value}</p>
+            <p className="mt-5 text-2xl font-bold text-dark">{value}</p>
           </div>
         ))}
       </section>
 
       <div className="grid gap-5 lg:grid-cols-[1.5fr_1fr]">
-        <div className="rounded-2xl border border-[#e9e5de] bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+        <div className="rounded-xl border border-[#e3ddd8] bg-white p-5 shadow-sm">
           <h2 className="text-sm font-semibold text-[#231f1d]">
             Monthly performance
           </h2>
@@ -45,11 +45,11 @@ const Performance: React.FC = () => {
                 key={index}
                 className="flex flex-1 flex-col items-center justify-end gap-2"
               >
-                <span className="text-[8px] text-[#9a938a]">
+                <span className="text-[8px] text-[#6b6258]">
                   {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"][index]}
                 </span>
                 <div
-                  className="w-full rounded-t-xl bg-gradient-to-t from-[#a77b27] to-[#d8b96f]"
+                  className="w-full rounded-t-xl bg-gradient-to-t from-[#b8924f] to-primary"
                   style={{ height: `${height}%` }}
                 />
               </div>
@@ -57,7 +57,7 @@ const Performance: React.FC = () => {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-[#e9e5de] bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+        <div className="rounded-xl border border-[#e3ddd8] bg-white p-5 shadow-sm">
           <h2 className="text-sm font-semibold text-[#231f1d]">Highlights</h2>
           <div className="mt-4 space-y-3">
             {[
@@ -67,10 +67,10 @@ const Performance: React.FC = () => {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-center justify-between rounded-xl bg-[#faf7f3] px-3 py-2.5"
+                className="flex items-center justify-between rounded-lg bg-light px-3 py-2.5"
               >
-                <span className="text-[10px] text-[#625d59]">{item.label}</span>
-                <span className="text-[10px] font-semibold text-[#2b2724]">
+                <span className="text-[10px] text-[#6b6258]">{item.label}</span>
+                <span className="text-[10px] font-semibold text-dark">
                   {item.value}
                 </span>
               </div>

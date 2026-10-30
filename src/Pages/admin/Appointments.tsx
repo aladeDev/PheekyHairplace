@@ -345,11 +345,11 @@ const Appointments: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen bg-[#f7f7f5] px-4 py-5 text-[#292820] sm:px-6 lg:px-8"
+      className="mx-auto max-w-[1600px] space-y-6 text-dark"
       onClick={() => setOpenActionId(null)}
     >
-      <div className="mx-auto max-w-[1600px]">
-        {/* Header */}
+      <div>
+        {/* Header */}  
         <div className="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <h1 className="font-serif text-2xl font-bold tracking-tight sm:text-3xl">
@@ -364,7 +364,7 @@ const Appointments: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={exportCSV}
-              className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+              className="flex items-center gap-2 rounded-lg  bg-white px-3 py-2.5 text-sm font-medium text-dark transition hover:bg-[#FEF1E8]"
             >
               <FiDownload size={15} />
               Export CSV
@@ -376,7 +376,7 @@ const Appointments: React.FC = () => {
                   "Connect your appointment creation form to add a new booking.",
                 )
               }
-              className="flex items-center gap-2 rounded-lg bg-[#765719] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#5f4614]"
+              className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-dark transition hover:bg-hover"
             >
               <FiPlus size={16} />
               New Appointment
@@ -385,7 +385,7 @@ const Appointments: React.FC = () => {
         </div>
 
         {/* Search and filters */}
-        <div className="mb-4 flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-3 shadow-sm lg:flex-row">
+        <div className="mb-4 flex flex-col gap-3 rounded-xL bg-white p-3  lg:flex-row">
           <div className="relative min-w-0 flex-1">
             <FiSearch
               className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -398,7 +398,7 @@ const Appointments: React.FC = () => {
                 setCurrentPage(1);
               }}
               placeholder="Search by customer name, booking ID, phone..."
-              className="w-full rounded-lg border border-gray-200 bg-[#fafaf9] py-2.5 pl-9 pr-3 text-sm outline-none transition focus:border-[#b49a5d] focus:ring-2 focus:ring-[#b49a5d]/10"
+              className="w-full  bg-[#fafaf9] rounded-xl  py-2.5 pl-9 pr-3 text-sm outline-none transition  focus:ring-2 focus:ring-[#b49a5d]/10"
             />
           </div>
 
@@ -474,14 +474,14 @@ const Appointments: React.FC = () => {
 
         {/* Status tabs */}
         <div className="mb-5 flex flex-col justify-between gap-3 xl:flex-row xl:items-center">
-          <div className="flex gap-1 overflow-x-auto rounded-lg border border-gray-200 bg-white p-1">
+          <div className="flex gap-1 overflow-x-auto rounded-lg  bg-white p-1">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => changeTab(tab)}
                 className={`flex shrink-0 items-center gap-2 rounded-md px-3 py-2 text-xs font-medium transition ${
                   activeTab === tab
-                    ? "bg-[#765719] text-white shadow-sm"
+                    ? "bg-primary text-dark "
                     : "text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                 }`}
               >
@@ -499,7 +499,7 @@ const Appointments: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex shrink-0 items-center gap-1 self-end rounded-lg border border-gray-200 bg-white p-1 xl:self-auto">
+          <div className="flex shrink-0 items-center gap-1 self-end rounded-lg  bg-white p-1 xl:self-auto">
             {(["Table", "Calendar", "Timeline"] as const).map((mode) => (
               <button
                 key={mode}
@@ -530,7 +530,7 @@ const Appointments: React.FC = () => {
 
         {/* Appointments table */}
         {viewMode === "Table" ? (
-          <div className="overflow-visible rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div className="overflow-visible rounded-xl border border-gray-200 bg-white">
             <div className="flex flex-col justify-between gap-2 border-b border-gray-100 px-4 py-4 sm:flex-row sm:items-center">
               <div>
                 <h2 className="text-sm font-bold">Queue Pipeline</h2>
@@ -652,7 +652,7 @@ const Appointments: React.FC = () => {
                           </button>
 
                           {openActionId === appointment.id && (
-                            <div className="absolute right-0 top-10 z-20 w-40 rounded-xl border border-gray-200 bg-white p-1.5 shadow-xl">
+                            <div className="absolute right-0 top-10 z-20 w-40 rounded-xl border border-gray-200 bg-white p-1.5 ">
                               <button
                                 onClick={() => {
                                   setSelectedAppointment(appointment);
@@ -739,7 +739,7 @@ const Appointments: React.FC = () => {
                     onClick={() => setCurrentPage(page)}
                     className={`h-8 min-w-8 rounded-lg px-2 text-xs font-medium transition ${
                       currentPage === page
-                        ? "bg-[#765719] text-white"
+                        ? "bg-primary text-dark"
                         : "text-gray-500 hover:bg-gray-100"
                     }`}
                   >
@@ -761,7 +761,7 @@ const Appointments: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
             <h2 className="mb-4 text-sm font-bold">
               {viewMode === "Calendar"
                 ? "Appointments Calendar"
@@ -837,7 +837,7 @@ const Appointments: React.FC = () => {
             role="alertdialog"
             aria-modal="true"
             aria-labelledby="delete-modal-title"
-            className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl"
+            className="w-full max-w-md rounded-2xl bg-white p-6 "
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-rose-50 text-rose-600">

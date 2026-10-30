@@ -64,26 +64,6 @@ const OrderDetailsModal: React.FC<OrderDetailsModalProps> = ({
       aria-labelledby="order-details-title"
       className="my-auto w-full max-w-xl overflow-hidden rounded-2xl bg-white shadow-2xl"
     >
-      <div className="flex items-start justify-between border-b border-[#efede7] p-5">
-        <div>
-          <p className="text-[9px] font-bold uppercase tracking-widest text-[#a58a52]">
-            Order Details
-          </p>
-          <h2 id="order-details-title" className="mt-1 text-xl font-bold">
-            {order.id}
-          </h2>
-          <p className="mt-1 text-xs text-[#918d83]">Placed on {order.date}</p>
-        </div>
-
-        <button
-          onClick={onClose}
-          aria-label="Close order details"
-          className="rounded-lg border border-[#ece9e2] p-2 text-[#77736a] hover:bg-[#f8f7f4]"
-        >
-          <FiX />
-        </button>
-      </div>
-
       <div className="space-y-5 p-5">
         <div className="flex items-center gap-3 rounded-xl bg-[#fbfaf7] p-4">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f1e5cc] font-bold text-[#98763a]">

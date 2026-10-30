@@ -1,6 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import { FiPackage, FiPlus, FiX } from "react-icons/fi";
+import { FiPlus, FiX } from "react-icons/fi";
 
 export interface WigFormValues {
   name: string;
@@ -71,22 +71,13 @@ const AddWigModal: React.FC<AddWigModalProps> = ({
       >
         <header className="flex shrink-0 items-start justify-between gap-4 border-b border-[#eeeae1] px-5 py-5 sm:px-7">
           <div className="flex min-w-0 items-start gap-3.5">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#f2eddf] text-[#76591d]">
-              <FiPackage size={20} />
-            </span>
             <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#9b8046]">
-                Inventory catalog
-              </p>
               <h2
                 id="add-wig-title"
                 className="mt-1 font-serif text-xl font-bold text-[#302b20] sm:text-2xl"
               >
                 Add a new wig
               </h2>
-              <p className="mt-1 text-xs text-[#89857b] sm:text-sm">
-                Enter the product details and starting stock quantity.
-              </p>
             </div>
           </div>
           <button
@@ -102,14 +93,9 @@ const AddWigModal: React.FC<AddWigModalProps> = ({
         <form onSubmit={onSubmit} className="flex min-h-0 flex-1 flex-col">
           <div className="min-h-0 flex-1 space-y-6 overflow-y-auto px-5 py-5 sm:px-7 sm:py-6">
             <section>
-              <h3 className="mb-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#8d7950]">
-                Product identity
-              </h3>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <label className="sm:col-span-2">
-                  <span className={labelClassName}>
-                    Wig name <span className="text-[#a35c4f">*</span>
-                  </span>
+                <label className="sm:col-span-2 text-black">
+                  <span className={labelClassName}>Wig name</span>
                   <input
                     {...field("name")}
                     required
@@ -144,9 +130,7 @@ const AddWigModal: React.FC<AddWigModalProps> = ({
                 </label>
 
                 <label className="sm:col-span-2">
-                  <span className={labelClassName}>
-                    Wig image <span className="text-[#a35c4f">*</span>
-                  </span>
+                  <span className={labelClassName}>Wig image</span>
                   <input
                     required
                     type="file"
@@ -218,9 +202,7 @@ const AddWigModal: React.FC<AddWigModalProps> = ({
               </h3>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <label>
-                  <span className={labelClassName}>
-                    Price (₦) <span className="text-[#a35c4f">*</span>
-                  </span>
+                  <span className={labelClassName}>Price (₦)</span>
                   <input
                     {...field("price")}
                     required
@@ -234,7 +216,6 @@ const AddWigModal: React.FC<AddWigModalProps> = ({
                 <label>
                   <span className={labelClassName}>
                     Initial stock quantity{" "}
-                    <span className="text-[#a35c4f">*</span>
                   </span>
                   <input
                     {...field("stock")}
@@ -259,7 +240,7 @@ const AddWigModal: React.FC<AddWigModalProps> = ({
             </button>
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#76591d] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#604714] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#76591d]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition  focus-visible:outline-2 focus-visible:outline-offset-2 "
             >
               <FiPlus size={16} />
               Add Wig

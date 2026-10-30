@@ -316,25 +316,14 @@ const Orders: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf9f6] p-3 text-[#302e29] sm:p-5 lg:p-7">
-      <div className="mx-auto max-w-[1600px]">
+    <div className="mx-auto max-w-[1600px] text-dark">
+      <div>
         {/* Header */}
         <header className="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <div>
-            <div className="mb-2 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a58a52]">
-              <span>Wig & Beauty Fulfillment</span>
-              <span>/</span>
-              <span>Order Management</span>
-            </div>
-
             <h1 className="text-2xl font-bold tracking-tight text-[#292821] sm:text-3xl">
               Wig & Product Orders
             </h1>
-
-            <p className="mt-1 max-w-2xl text-xs leading-5 text-[#89867d]">
-              Manage wig orders, track fulfillment, monitor payments, and
-              coordinate customer deliveries.
-            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -606,7 +595,7 @@ const Orders: React.FC = () => {
                   >
                     <td className="px-4 py-4 align-middle">
                       <p className="whitespace-nowrap text-[11px] font-bold text-[#353229]">
-                        <span className="mr-1 text-[#b49a62]">◆</span>
+                      
                         {order.id}
                       </p>
                       <p className="mt-1 whitespace-nowrap text-[9px] text-[#99958b]">
@@ -670,7 +659,7 @@ const Orders: React.FC = () => {
                             onClick={() =>
                               updateStatus(order.id, "Awaiting Crafting")
                             }
-                            className="whitespace-nowrap rounded-lg bg-[#a58a52] px-2.5 py-2 text-[9px] font-semibold text-white transition hover:bg-[#8b713c]"
+                            className="whitespace-nowrap rounded-lg bg-primary px-2.5 py-2 text-[9px] font-semibold text-dark transition hover:bg-hover"
                           >
                             Approve
                           </button>

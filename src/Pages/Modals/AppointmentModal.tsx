@@ -93,68 +93,10 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
       className="my-auto w-full max-w-2xl overflow-hidden rounded-2xl bg-[#f8f8f6] shadow-2xl"
       onClick={(event) => event.stopPropagation()}
     >
-      <div className="flex items-start justify-between border-b border-gray-200 bg-white px-5 py-4 sm:px-6">
-        <div>
-          <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-400">
-            Active Reservation
-          </p>
-          <h2
-            id="appointment-modal-title"
-            className="font-serif text-xl font-bold text-gray-900 sm:text-2xl"
-          >
-            Booking #{appointment.id}
-          </h2>
-          <p className="mt-1 text-xs text-gray-500">
-            Appointment details and booking management
-          </p>
-        </div>
-
-        <button
-          onClick={onClose}
-          aria-label="Close appointment details"
-          className="rounded-lg border border-gray-200 p-2 text-gray-500 transition hover:bg-gray-100 hover:text-gray-900"
-        >
-          <FiX size={18} />
-        </button>
-      </div>
-
       <div className="max-h-[75vh] space-y-5 overflow-y-auto p-4 sm:p-6">
-        <div className="flex flex-col justify-between gap-4 rounded-xl border border-gray-100 bg-white p-4 sm:flex-row sm:items-center">
-          <div className="flex items-center gap-3">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#eee5d3] text-lg font-bold text-[#765719]">
-              {appointment.initials}
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-gray-900">
-                {appointment.customer}
-              </h3>
-              <p className="mt-1 text-xs text-gray-500">VIP Gold Member</p>
-              <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-gray-500">
-                <span className="flex items-center gap-1">
-                  <FiPhone size={11} />
-                  {appointment.phone}
-                </span>
-                <span className="flex items-center gap-1">
-                  <FiMail size={11} />
-                  {appointment.email}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <span
-            className={`w-fit shrink-0 rounded-full px-3 py-1.5 text-[10px] font-bold ring-1 ring-inset ${statusStyle}`}
-          >
-            {appointment.status === "Pending"
-              ? "PENDING APPROVAL"
-              : appointment.status.toUpperCase()}
-          </span>
-        </div>
-
         <section>
           <div className="mb-3 flex items-center gap-2">
-            <FiScissors size={15} className="text-[#765719]" />
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-black">
               Appointment Specifications
             </h3>
           </div>

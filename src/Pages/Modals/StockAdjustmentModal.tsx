@@ -29,8 +29,6 @@ const StockAdjustmentModal: React.FC<StockAdjustmentModalProps> = ({
   onClose,
   onSave,
 }) => {
-  if (!isOpen) return null;
-
   const initialWigId =
     selectedWig?.id.toString() || wigs[0]?.id.toString() || "";
 
@@ -48,6 +46,8 @@ const StockAdjustmentModal: React.FC<StockAdjustmentModalProps> = ({
   }, [selectedWig, wigs]);
 
   const currentWig = wigs.find((wig) => wig.id.toString() === wigId);
+
+  if (!isOpen) return null;
 
   const handleWigChange = (nextWigId: string) => {
     setWigId(nextWigId);
@@ -74,37 +74,6 @@ const StockAdjustmentModal: React.FC<StockAdjustmentModalProps> = ({
         aria-labelledby="stock-adjustment-title"
         className="my-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-[#ece7dc] bg-[#fffdf9] shadow-[0_20px_60px_rgba(31,25,20,0.18)]"
       >
-        <header className="flex items-start justify-between gap-4 border-b border-[#eee9df] bg-[#fdfaf4] px-5 py-4 sm:px-6">
-          <div className="flex min-w-0 items-start gap-3.5">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f2ebdc] text-[#7d6023]">
-              <FiTrendingUp size={20} />
-            </span>
-            <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#a28746]">
-                Inventory control
-              </p>
-              <h2
-                id="stock-adjustment-title"
-                className="mt-1 font-serif text-xl font-bold text-[#2f2a24] sm:text-2xl"
-              >
-                Stock Adjustment
-              </h2>
-              <p className="mt-1 text-xs text-[#8e8a82]">
-                Update the quantity of an existing wig.
-              </p>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close stock adjustment modal"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[#8b857d] transition hover:bg-[#f3efe8] hover:text-[#2f2a24]"
-          >
-            <FiX size={18} />
-          </button>
-        </header>
-
         <form onSubmit={handleSubmit} className="space-y-5 p-5 sm:p-6">
           <div className="rounded-2xl border border-[#efe7d9] bg-[#faf8f4] p-4">
             <div className="flex items-center gap-2 text-[#816326]">

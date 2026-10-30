@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import AddWigModal, { type WigFormValues } from "../Modals/AddWigModal";
 import StockAdjustmentModal from "../Modals/StockAdjustmentModal";
+import assets from "../../assets/assets";
 import {
   FiSearch,
   FiDownload,
@@ -49,8 +50,7 @@ const initialWigs: Wig[] = [
     stock: 3,
     performance: "84 sold",
     status: "Active",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&q=80",
+    image: assets.wig1,
   },
   {
     id: 2,
@@ -64,8 +64,7 @@ const initialWigs: Wig[] = [
     stock: 8,
     performance: "62 sold",
     status: "Active",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+    image: assets.wig2,
   },
   {
     id: 3,
@@ -79,8 +78,7 @@ const initialWigs: Wig[] = [
     stock: 14,
     performance: "48 sold",
     status: "Active",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80",
+    image: assets.wig3,
   },
   {
     id: 4,
@@ -94,8 +92,7 @@ const initialWigs: Wig[] = [
     stock: 3,
     performance: "41 sold",
     status: "Active",
-    image:
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=100&q=80",
+    image: assets.woman,
   },
   {
     id: 5,
@@ -109,8 +106,7 @@ const initialWigs: Wig[] = [
     stock: 18,
     performance: "28 sold",
     status: "Active",
-    image:
-      "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=100&q=80",
+    image: assets.woam,
   },
   {
     id: 6,
@@ -124,8 +120,7 @@ const initialWigs: Wig[] = [
     stock: 0,
     performance: "17 sold",
     status: "Out of Stock",
-    image:
-      "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?w=100&q=80",
+    image: assets.wig1,
   },
 ];
 
@@ -245,8 +240,7 @@ const Wigs: React.FC = () => {
       stock,
       performance: "0 sold",
       status: stock === 0 ? "Out of Stock" : "Active",
-      image: newWig.image ||
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80",
+      image: newWig.image || assets.wig1,
     };
 
     setWigs((previous) => [wig, ...previous]);
@@ -319,8 +313,8 @@ const Wigs: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f8f6] px-3 py-5 text-[#282721] sm:px-5 lg:px-8">
-      <div className="mx-auto max-w-[1600px] space-y-5">
+    <div className="mx-auto max-w-[1600px] text-dark">
+      <div className="space-y-6">
         {/* Header */}
         <header className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
           <div>
@@ -352,7 +346,7 @@ const Wigs: React.FC = () => {
 
             <button
               onClick={() => setShowAddModal(true)}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#76591d] px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#604714] sm:text-sm"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-xs font-semibold text-dark shadow-sm transition hover:bg-hover sm:text-sm"
             >
               <FiPlus size={16} />
               Add New Wig
@@ -806,7 +800,7 @@ const Wigs: React.FC = () => {
                     onClick={() => setPage(pageNumber)}
                     className={`h-8 min-w-8 rounded-md px-2 text-xs font-semibold transition ${
                       page === pageNumber
-                        ? "bg-[#76591d] text-white"
+                        ? "bg-primary text-dark"
                         : "text-[#716d64] hover:bg-[#f2efe8]"
                     }`}
                   >
@@ -823,7 +817,7 @@ const Wigs: React.FC = () => {
                   onClick={() => setPage(totalPages)}
                   className={`h-8 min-w-8 rounded-md px-2 text-xs font-semibold ${
                     page === totalPages
-                      ? "bg-[#76591d] text-white"
+                      ? "bg-primary text-dark"
                       : "text-[#716d64] hover:bg-[#f2efe8]"
                   }`}
                 >
@@ -915,7 +909,7 @@ const Wigs: React.FC = () => {
 
           <button
             onClick={() => setSelectedWig(null)}
-            className="mt-5 w-full rounded-lg bg-[#76591d] px-4 py-3 text-sm font-semibold text-white hover:bg-[#604714]"
+            className="mt-5 w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-dark hover:bg-hover"
           >
             Close Details
           </button>

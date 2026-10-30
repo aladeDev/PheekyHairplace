@@ -282,13 +282,13 @@ const Payments: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f8f6] px-3 py-5 text-[#282824] sm:px-5 lg:px-8 lg:py-7">
-      <div className="mx-auto max-w-[1600px] space-y-5">
+    <div className="mx-auto max-w-[1600px] text-dark">
+      <div className="space-y-6">
         {/* Header */}
         <header className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <div className="mb-1 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#81621c] text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-dark">
                 <FiCreditCard size={17} />
               </div>
               <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8b702e]">
@@ -307,15 +307,7 @@ const Payments: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <div className="flex items-center gap-2 rounded-lg border border-[#e9e5dc] bg-white px-3 py-2">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-              <div>
-                <p className="text-[11px] font-semibold">
-                  Live Settlement Feed
-                </p>
-                <p className="text-[10px] text-[#98968e]">Synced 2 min ago</p>
-              </div>
-            </div>
+         
 
             <button
               type="button"
@@ -329,7 +321,7 @@ const Payments: React.FC = () => {
             <button
               type="button"
               onClick={() => setShowReceipt(true)}
-              className="flex items-center justify-center gap-2 rounded-lg bg-[#282824] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#81621c]"
+              className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-dark transition hover:bg-hover"
             >
               <FiPlus size={17} />
               Log Transaction
@@ -421,14 +413,14 @@ const Payments: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <button
+              {/* <button
                 type="button"
                 onClick={exportCSV}
                 className="flex h-10 items-center justify-center gap-2 rounded-lg border border-[#e9e5dc] px-3 text-xs font-medium transition hover:bg-[#faf7ef]"
               >
                 <FiDownload size={14} />
                 Download Audit CSV
-              </button>
+              </button> */}
 
               <button
                 type="button"
@@ -444,7 +436,7 @@ const Payments: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowReceipt(true)}
-                className="flex h-10 items-center justify-center gap-2 rounded-lg bg-[#80611c] px-3 text-xs font-semibold text-white transition hover:bg-[#654b12]"
+                className="flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-3 text-xs font-semibold text-dark transition hover:bg-hover"
               >
                 <FiPlus size={14} />
                 Log Cash/Terminal Receipt
@@ -540,7 +532,7 @@ const Payments: React.FC = () => {
                         "Date range selected. Connect your date filter to your transaction API.",
                       );
                     }}
-                    className="w-full rounded-lg bg-[#80611c] py-2 text-xs font-semibold text-white hover:bg-[#654b12]"
+                    className="w-full rounded-lg bg-primary py-2 text-xs font-semibold text-dark hover:bg-hover"
                   >
                     Apply date range
                   </button>
@@ -741,7 +733,7 @@ const Payments: React.FC = () => {
                       onClick={() => setPage(number)}
                       className={`h-8 min-w-8 rounded-lg px-2 text-[11px] transition ${
                         page === number
-                          ? "bg-[#80611c] font-semibold text-white"
+                          ? "bg-primary font-semibold text-dark"
                           : "border border-[#eeeae2] hover:bg-[#faf7ef]"
                       }`}
                     >

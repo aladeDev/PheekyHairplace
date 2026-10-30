@@ -23,7 +23,7 @@ const AdminLayout = () => {
   }, [isSidebarOpen]);
 
   return (
-    <div className="min-h-screen bg-[#faf8f4] text-[#24231f]">
+    <div className="admin-dashboard min-h-screen bg-light font-serif text-dark">
       <AdminTopbar
         isSidebarOpen={isSidebarOpen}
         onMenuClick={() => setIsSidebarOpen((open) => !open)}
@@ -32,7 +32,7 @@ const AdminLayout = () => {
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
       />
-      <main className="min-h-screen px-5 pb-12 pt-24 sm:px-8 lg:ml-64 lg:px-10">
+      <main className="min-h-screen px-4 pb-12 pt-24 sm:px-6 lg:ml-64 lg:px-8">
         <Outlet />
       </main>
     </div>

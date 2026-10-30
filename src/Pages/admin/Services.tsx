@@ -112,7 +112,7 @@ const Services = () => {
 
   const serviceImageField = () => (
     <label className="block text-sm font-medium text-[#39352f]">
-      Service image *
+      Service image 
       <span className="mt-2 flex min-h-36 cursor-pointer flex-col items-center justify-center overflow-hidden border border-dashed border-[#d9d2c8] bg-[#faf9f6] text-center text-xs text-[#746d63]">
         {draft.image ? (
           <img src={draft.image} alt="Service image preview" className="h-36 w-full object-cover" />
@@ -165,10 +165,10 @@ const Services = () => {
   );
 
   return (
-    <section className="space-y-6">
+    <section className="mx-auto max-w-[1600px] space-y-6">
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#24231f]">Services</h1>
+          <h1 className="font-serif text-3xl font-semibold text-dark">Services</h1>
           <p className="mt-1 text-sm text-[#6b6258]">
             Manage the four no-price cards in the Nails & Beauty section.
           </p>
@@ -176,14 +176,14 @@ const Services = () => {
         <button
           type="button"
           onClick={startNewService}
-          className="inline-flex items-center gap-2 bg-[#29251f] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#494238]"
+          className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-dark transition hover:bg-hover"
         >
           <FiPlus /> Add service
         </button>
       </header>
 
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.9fr)]">
-        <div className="divide-y divide-[#eeeae4] border border-[#eeeae4] bg-white">
+        <div className="divide-y divide-[#eeeae4] border border-[#eeeae4] bg-white rounded-xl">
           {services.map((service) => (
             <article key={service.id} className="flex items-center gap-4 p-4">
               <img src={service.image} alt="" className="h-16 w-16 shrink-0 object-cover" />
@@ -215,7 +215,7 @@ const Services = () => {
           )}
         </div>
 
-        <div className="border border-[#eeeae4] bg-white p-5 md:p-6">
+        <div className="border border-[#eeeae4] bg-white p-5 md:p-6 rounded-xl">
           <div className="mb-5 flex items-center justify-between gap-3">
             <h2 className="text-lg font-semibold text-[#24231f]">
               {editingId ? "Edit service" : "New service"}
@@ -237,7 +237,7 @@ const Services = () => {
               <input
                 value={draft.name}
                 onChange={(event) => setDraft({ ...draft, name: event.target.value })}
-                className="mt-2 w-full border border-[#d9d2c8] px-3 py-2.5 text-sm outline-none focus:border-[#8b7654]"
+                className="mt-2 w-full rounded-md border border-[#e3ddd8] px-3 py-2.5 text-sm outline-none focus:border-primary"
                 placeholder="e.g. Lace frontal installation"
               />
             </label>
@@ -247,7 +247,7 @@ const Services = () => {
                 value={draft.description}
                 onChange={(event) => setDraft({ ...draft, description: event.target.value })}
                 rows={3}
-                className="mt-2 w-full resize-y border border-[#d9d2c8] px-3 py-2.5 text-sm outline-none focus:border-[#8b7654]"
+                className="mt-2 w-full resize-y rounded-md border border-[#e3ddd8] px-3 py-2.5 text-sm outline-none focus:border-primary"
                 placeholder="Describe what the service includes"
               />
             </label>
@@ -258,7 +258,7 @@ const Services = () => {
             <button
               type="button"
               onClick={handleSave}
-              className="inline-flex w-full items-center justify-center gap-2 bg-[#29251f] px-4 py-3 text-sm font-medium text-white hover:bg-[#494238]"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-medium text-dark transition hover:bg-hover"
             >
               <FiSave /> Save service
             </button>

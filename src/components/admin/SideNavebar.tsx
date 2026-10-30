@@ -31,8 +31,6 @@ const groups: { title: string | null; links: SidebarLink[] }[] = [
     links: [
       { to: "/admin/overview", label: "Overview", icon: FiGrid },
       { to: "/admin/appointments", label: "Appointments", icon: FiCalendar },
-      { to: "/admin/customers", label: "Customers", icon: FiUsers },
-      { to: "/admin/stylists", label: "Stylists", icon: FiScissors },
     ],
   },
   {
@@ -48,8 +46,6 @@ const groups: { title: string | null; links: SidebarLink[] }[] = [
     title: "Business",
     links: [
       { to: "/admin/payments", label: "Payments", icon: FiCreditCard },
-      { to: "/admin/promotions", label: "Promotions", icon: FiTag },
-      { to: "/admin/analytics", label: "Analytics", icon: FiBarChart2 },
     ],
   },
   {
@@ -80,7 +76,7 @@ const AdminSidebar = ({ isOpen, onClose }: AdminSidebarProps) => {
 
       <aside
         aria-label="Admin sidebar"
-        className={`fixed left-0 top-16 z-50 h-[calc(100dvh-4rem)] w-64 overflow-y-auto border-r border-[#e8e2d8] bg-white px-4 py-5 shadow-xl transition-transform duration-200 lg:translate-x-0 lg:shadow-none ${
+        className={`fixed left-0 top-16 z-50 h-[calc(100dvh-4rem)] w-64 overflow-y-auto border-r border-[#e3ddd8] bg-white px-4 py-5 shadow-xl transition-transform duration-200 lg:translate-x-0 lg:shadow-none ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -88,7 +84,7 @@ const AdminSidebar = ({ isOpen, onClose }: AdminSidebarProps) => {
           {groups.map((group) => (
             <div key={group.title ?? "main"}>
               {group.title && (
-                <p className="mb-2 px-3 text-[10px] font-medium uppercase text-[#8b8176]">
+                <p className="mb-2 px-3 text-[10px] font-medium uppercase tracking-wide text-[#6b6258]">
                   {group.title}
                 </p>
               )}
@@ -99,10 +95,10 @@ const AdminSidebar = ({ isOpen, onClose }: AdminSidebarProps) => {
                     to={link.to}
                     onClick={onClose}
                     className={({ isActive }) =>
-                      `flex items-center gap-3 rounded px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#9a7947] ${
+                      `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary ${
                         isActive
-                          ? "bg-primary text-white"
-                          : "text-black hover:bg-gray-100 hover:text-primary"
+                          ? "bg-primary text-dark"
+                          : "text-dark hover:bg-[#FEF1E8] hover:text-hover"
                       }`
                     }
                   >

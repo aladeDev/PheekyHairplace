@@ -10,12 +10,12 @@ const AdminSection = ({
   emptyMessage,
 }: AdminSectionProps) => {
   return (
-    <section className="space-y-6">
+    <section className="mx-auto max-w-[1600px] space-y-6">
       <header>
-        <h1 className="text-2xl font-bold text-[#24231f]">{title}</h1>
+        <h1 className="font-serif text-3xl font-semibold text-dark">{title}</h1>
         <p className="mt-1 text-sm text-[#6b6258]">{description}</p>
       </header>
-      <div className="rounded-sm border border-[#eeeae4] bg-white p-6">
+      <div className="rounded-xl border border-[#e3ddd8] bg-white p-6">
         <p className="text-sm text-[#6b6258]">{emptyMessage}</p>
       </div>
     </section>
